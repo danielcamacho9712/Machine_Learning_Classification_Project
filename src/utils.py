@@ -13,26 +13,9 @@ def load_data(file_path):
 def histogram_feature(data, bins = 30):
     """Plot histograms for all numerical features in the DataFrame."""
 
-    numerical_cols = data.drop(columns=['Student_ID']).select_dtypes(include=['number']).columns
+    numerical_cols = data.select_dtypes(include=['number']).columns
 
-    for col in numerical_cols:
-
-        plt.figure(figsize=(8, 4))
-        sns.histplot(data[col], 
-                     bins=bins, 
-                     kde=True)
-
-        mean_val = data[col].mean()
-
-        plt.axvline(mean_val, 
-                    color='red', 
-                    linestyle='dashed', 
-                    linewidth=2)
-
-        plt.title(f'Histogram of {col}')
-        plt.xlabel(col)
-        plt.ylabel('Frequency')
-        plt.show()
+    data[numerical_cols].hist(bins=bins, figsize=(15, 8))
 
     return
 
@@ -53,3 +36,16 @@ def correlation_matrix(data):
     plt.show()
 
     return
+
+def categorical_cardinality(data):
+    """Cardinality of categorical features in the DataFrame."""
+
+    cardinalities = {}
+
+    categorical_cols = data.select_dtypes(include=['object', 'category']).columns
+
+    for col in categorical_cols:
+        cardinalities[col] = data[col].nunique()
+
+    return cardinalities
+
