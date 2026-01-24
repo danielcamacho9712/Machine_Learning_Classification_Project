@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.feature_selection import mutual_info_classif
+from sklearn.preprocessing import LabelEncoder
 
 def load_data(file_path):
     
@@ -49,3 +51,20 @@ def categorical_cardinality(data):
 
     return cardinalities
 
+def compute_mutual_info(data):
+    """Compute mutual information between features and the target variable."""
+
+    X = data.drop(columns=['Weather Type'])
+    y = data['Weather Type']
+
+    categorical_cols = X.select_dtypes(include=['object']).columns.tolist()
+
+    for col in categorical_cols:
+        le = LabelEncoder()
+        X[col] = le.fit_transform(X[col])
+    
+    discrete_features = [True if col in categorical_cols else False for col in X.columns]
+
+    mi = mutual_info_classif(X, y, discrete_features=discrete_features, random_state=42)
+    mi_series = pd.Series(mi, index=X.columns).sort_values(ascending=False)
+    return mi_series
