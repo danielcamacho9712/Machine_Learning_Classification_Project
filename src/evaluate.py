@@ -1,24 +1,20 @@
 from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.metrics import ConfusionMatrixDisplay
-from src.preprocessing import target_encoder
+from src.encoding import fit_and_save_label_encoder
 
 
-def evaluate_model(model, test_data):
-
-    X_test = test_data.drop(columns=['Weather Type'])
-    y_test = test_data['Weather Type']
-
-    y_test_encoded = target_encoder.transform(y_test)
+def evaluate_model(model, X_test, y_test, label_encoder=None):
+    """ Evaluate the given model on the test data and return performance metrics and confusion matrix. """
 
     y_pred = model.predict(X_test)
     y_proba = model.predict_proba(X_test)
 
     results = {
-        'precision': precision_score(y_test_encoded, y_pred, average="weighted"),
-        'recall': recall_score(y_test_encoded, y_pred, average="weighted"),
-        'f1_score': f1_score(y_test_encoded, y_pred, average="weighted"),
+        'precision': precision_score(y_test, y_pred, average="weighted"),
+        'recall': recall_score(y_test, y_pred, average="weighted"),
+        'f1_score': f1_score(y_test, y_pred, average="weighted"),
         'roc_auc': roc_auc_score(
-            y_test_encoded,
+            y_test,
             y_proba,
             multi_class="ovr",
             average="weighted"
@@ -26,9 +22,9 @@ def evaluate_model(model, test_data):
     }
 
     disp = ConfusionMatrixDisplay.from_predictions(
-        y_test_encoded,
+        y_test,
         y_pred,
-        display_labels=target_encoder.classes_,
+        display_labels=label_encoder.classes_,
         cmap="Blues"
     )
 
@@ -39,22 +35,19 @@ def evaluate_model(model, test_data):
     return results, disp
 
 
-def evaluate_train_data(model, train_data):
+def evaluate_train_data(model, X_train, y_train):
 
-    X_train = train_data.drop(columns=['Weather Type'])
-    y_train = train_data['Weather Type']
-
-    y_train_encoded = target_encoder.transform(y_train)
+    """ Evaluate the given model on the training data and return performance metrics, to rule out overfitting. """
 
     y_pred = model.predict(X_train)
     y_proba = model.predict_proba(X_train)
 
     results = {
-        'precision': precision_score(y_train_encoded, y_pred, average="weighted"),
-        'recall': recall_score(y_train_encoded, y_pred, average="weighted"),
-        'f1_score': f1_score(y_train_encoded, y_pred, average="weighted"),
+        'precision': precision_score(y_train, y_pred, average="weighted"),
+        'recall': recall_score(y_train, y_pred, average="weighted"),
+        'f1_score': f1_score(y_train, y_pred, average="weighted"),
         'roc_auc': roc_auc_score(
-            y_train_encoded,
+            y_train,
             y_proba,
             multi_class="ovr",
             average="weighted"

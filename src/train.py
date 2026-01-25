@@ -3,18 +3,13 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder
-from src.preprocessing import build_preprocessor, target_encoder
+from src.preprocessing import build_preprocessor
+from src.encoding import fit_and_save_label_encoder
 
-def train_model(data):
+def train_model(X_train, y_train):
+    """ Train multiple models with appropriate preprocessing pipelines. """
 
-    X = data.drop(columns=['Weather Type'])
-    y = data['Weather Type']
-
-    # Encode target variable and fit the global target encoder
-    target_encoder.fit(y)
-    y_encoded = target_encoder.transform(y)
-
-    preprocessor_scalers, preprocessor_trees = build_preprocessor(X)
+    preprocessor_scalers, preprocessor_trees = build_preprocessor(X_train)
 
     models = {
 
@@ -37,7 +32,7 @@ def train_model(data):
     trained_models = {}
 
     for model_name, model_pipeline in models.items():
-        model_pipeline.fit(X, y_encoded)
+        model_pipeline.fit(X_train, y_train)
         trained_models[model_name] = model_pipeline
 
     return trained_models
