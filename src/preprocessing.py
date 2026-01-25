@@ -1,6 +1,9 @@
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.preprocessing import LabelEncoder, StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
+
+# Global target encoder (to be fitted in train.py and used in evaluate.py)
+target_encoder = LabelEncoder()
 
 def build_preprocessor(X):
 

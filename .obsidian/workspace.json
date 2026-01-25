@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "be836e22b2675663",
+    "type": "split",
+    "children": [
+      {
+        "id": "735563874cf8e865",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7fa55434b353bf88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "524492ec966f0a1f",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ea6654b527d063c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "708e2888fe91accd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6c4befce2e285b07",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "1ec24d2bf4837bc9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7bf96fd1f2f4dadb",
+    "type": "split",
+    "children": [
+      {
+        "id": "89e83bceb733d6d9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f53f6ae02bc68dc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
+            }
+          },
+          {
+            "id": "21c0e9de55f4b0e7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
+            }
+          },
+          {
+            "id": "778bee06c031cd58",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1bfec0a8a52a7f2b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f5e232c849913b2a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "7fa55434b353bf88",
+  "lastOpenFiles": [
+    "src/features_eng.py",
+    "src/utils - Copie.py",
+    "notebooks/04_cross_validation.ipynb",
+    "notebooks/03_retraining.ipynb",
+    "notebooks/05_cross_validation.ipynb.ipynb",
+    "notebooks/04_retraining.ipynb - Copie.ipynb",
+    "notebooks/04_retraining.ipynb.ipynb",
+    "notebooks/03_feature_engineering - Copie.ipynb",
+    "results/baseline_models/baseline_model_performance.csv",
+    "results/baseline_models/gb_confusion_matrix.png",
+    "results/baseline_models/rf_confusion_matrix.png",
+    "results/baseline_models/lg_confusion_matrix.png",
+    "results/baseline_models",
+    "results/Nouveau dossier",
+    "README.md"
+  ]
+}
