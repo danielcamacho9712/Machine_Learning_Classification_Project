@@ -185,6 +185,9 @@
   },
   "active": "7fa55434b353bf88",
   "lastOpenFiles": [
+    "data/03_featured/featured_test_data.csv",
+    "data/03_featured/featured_train_data.csv",
+    "src/__pycache__/features_eng.cpython-311.pyc",
     "src/features_eng.py",
     "src/utils - Copie.py",
     "notebooks/04_cross_validation.ipynb",
@@ -193,12 +196,9 @@
     "notebooks/04_retraining.ipynb - Copie.ipynb",
     "notebooks/04_retraining.ipynb.ipynb",
     "notebooks/03_feature_engineering - Copie.ipynb",
-    "results/baseline_models/baseline_model_performance.csv",
     "results/baseline_models/gb_confusion_matrix.png",
     "results/baseline_models/rf_confusion_matrix.png",
     "results/baseline_models/lg_confusion_matrix.png",
-    "results/baseline_models",
-    "results/Nouveau dossier",
     "README.md"
   ]
 }
