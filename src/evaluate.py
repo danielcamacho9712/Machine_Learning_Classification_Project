@@ -2,6 +2,7 @@ from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_sco
 from sklearn.metrics import ConfusionMatrixDisplay
 from src.preprocessing import target_encoder
 
+
 def evaluate_model(model, test_data):
 
     X_test = test_data.drop(columns=['Weather Type'])
@@ -36,6 +37,7 @@ def evaluate_model(model, test_data):
     )
 
     return results, disp
+
 
 def evaluate_train_data(model, train_data):
 

@@ -15,7 +15,7 @@ def feature_engineering(data):
     df['Wind_Speed_Precipitation_Interaction'] = df['Wind Speed'] * df['Precipitation (%)']
 
     # May indicate foggy conditions
-    df['Humidity_Visibility_Interaction'] = df['Humidity'] / df['Visibility (km)']
+    df['Humidity_Visibility_Interaction'] = df['Humidity'] / (df['Visibility (km)'] + 1)
 
     ### Rescale existing features
 
